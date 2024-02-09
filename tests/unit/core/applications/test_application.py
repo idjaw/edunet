@@ -1,6 +1,6 @@
 import pytest
 
-from core.applications.application import Application
+from edunet.core.applications.application import Application
 
 
 def test_instantiating_an_implemented_application_is_successful():

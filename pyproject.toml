@@ -1,13 +1,12 @@
 [tool.poetry]
 name = "edunet"
-version = "0.1.0"
+version = "0.1.1"
 description = "Simple Network Simulation For The Funs!"
 authors = ["Wajdi Al-Hawari <w.hawari@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "~3.11"
-scapy = "^2.5.0"
+python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.4"

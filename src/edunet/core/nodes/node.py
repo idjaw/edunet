@@ -1,7 +1,7 @@
 import logging
 from abc import ABC, abstractmethod
 
-from core.networking.listeners.listener import Listener
+from edunet.core.networking.listeners.listener import Listener
 
 logger = logging.getLogger(__name__)
 

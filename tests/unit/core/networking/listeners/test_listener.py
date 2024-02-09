@@ -1,6 +1,6 @@
 import pytest as pytest
 
-from core.networking.listeners.listener import Listener
+from edunet.core.networking.listeners.listener import Listener
 
 
 @pytest.mark.parametrize(

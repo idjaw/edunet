@@ -1,6 +1,6 @@
 import socket
 
-from core.networking.handlers.connection_handler import ConnectionHandler
+from edunet.core.networking.handlers.connection_handler import ConnectionHandler
 
 
 class WSGIHandler(ConnectionHandler):

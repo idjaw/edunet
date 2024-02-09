@@ -2,9 +2,9 @@ import logging
 from dataclasses import dataclass
 from typing import Optional, Dict, TypeVar, Type
 
-from exceptions import HTTPValidationError, HTTPDataModelError
-from models.base_types import Request, Response
-from validators.http_validators import (
+from edunet.exceptions import HTTPValidationError, HTTPDataModelError
+from edunet.models.base_types import Request, Response
+from edunet.validators.http_validators import (
     validate_and_get_http_request_components,
 )
 

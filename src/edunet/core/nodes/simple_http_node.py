@@ -1,7 +1,7 @@
 import logging
 
-from core.nodes.node import Node
-from core.networking.listeners.listener import Listener
+from edunet.core.nodes.node import Node
+from edunet.core.networking.listeners.listener import Listener
 
 logger = logging.getLogger(__name__)
 

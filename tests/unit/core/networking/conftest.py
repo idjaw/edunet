@@ -3,8 +3,8 @@ from unittest.mock import Mock, patch, PropertyMock
 
 import pytest
 
-from core.networking.handlers.connection_handler import ConnectionHandler
-from core.networking.listeners.tcp_listener import TCPListener
+from edunet.core.networking.handlers.connection_handler import ConnectionHandler
+from edunet.core.networking.listeners.tcp_listener import TCPListener
 
 
 @pytest.fixture

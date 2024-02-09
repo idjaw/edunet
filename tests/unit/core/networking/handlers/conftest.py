@@ -2,8 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from core.applications.application import Application
-from core.networking.handlers.simple_http_connection_handler import (
+from edunet.core.applications.application import Application
+from edunet.core.networking.handlers.simple_http_connection_handler import (
     SimpleHTTPConnectionHandler,
 )
 

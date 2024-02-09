@@ -4,8 +4,8 @@ from unittest.mock import patch, PropertyMock
 
 import pytest
 
-from core.networking.listeners.tcp_listener import TCPListener
-from exceptions import TCPListenerError
+from edunet.core.networking.listeners.tcp_listener import TCPListener
+from edunet.exceptions import TCPListenerError
 
 
 def test_tcp_listener_initialization_success(mock_connection_handler, mock_socket):
@@ -322,7 +322,7 @@ def test_handle_request_sends_data_back_to_client_successfully(
 def test_handle_request_raises_when_raising_with_socket_error(
     mock_socket, tcp_listener, caplog
 ):
-    # Given a failure from the connection_handler
+    # Given a failure from edunet.the connection_handler
     tcp_listener.connection_handler.handle_connection.side_effect = socket.error(
         "Bad stuff"
     )

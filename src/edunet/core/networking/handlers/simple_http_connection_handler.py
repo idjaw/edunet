@@ -1,9 +1,9 @@
 import logging
 import socket
 
-from core.applications.application import Application
-from core.networking.handlers.connection_handler import ConnectionHandler
-from models.http import HTTPRequest
+from edunet.core.applications.application import Application
+from edunet.core.networking.handlers.connection_handler import ConnectionHandler
+from edunet.models.http import HTTPRequest
 
 logger = logging.getLogger(__name__)
 

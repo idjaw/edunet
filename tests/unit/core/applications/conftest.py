@@ -2,8 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from core.applications.simple_http_application import SimpleHTTPApplication
-from models.http import HTTPRequest
+from edunet.core.applications.simple_http_application import SimpleHTTPApplication
+from edunet.models.http import HTTPRequest
 
 
 @pytest.fixture

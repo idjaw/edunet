@@ -2,8 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from core.networking.listeners.listener import Listener
-from core.nodes.simple_http_node import SimpleHTTPNode
+from edunet.core.networking.listeners.listener import Listener
+from edunet.core.nodes.simple_http_node import SimpleHTTPNode
 
 
 @pytest.fixture
