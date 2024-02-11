@@ -2,9 +2,9 @@ import logging
 import socket
 import threading
 
-from core.networking.handlers.connection_handler import ConnectionHandler
-from core.networking.listeners.listener import Listener
-from exceptions import TCPListenerError
+from edunet.core.networking.handlers.connection_handler import ConnectionHandler
+from edunet.core.networking.listeners.listener import Listener
+from edunet.exceptions import TCPListenerError
 
 logger = logging.getLogger(__name__)
 

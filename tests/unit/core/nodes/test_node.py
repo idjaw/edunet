@@ -2,8 +2,8 @@ from unittest.mock import Mock
 
 import pytest
 
-from core.networking.listeners.listener import Listener
-from core.nodes.node import Node
+from edunet.core.networking.listeners.listener import Listener
+from edunet.core.nodes.node import Node
 
 
 def test_instantiating_an_implemented_node_is_successful():

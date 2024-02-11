@@ -3,8 +3,8 @@ import string
 import pytest
 from hypothesis import given, strategies as st
 
-from exceptions import HTTPValidationError
-from validators.http_validators import validate_and_get_http_request_components
+from edunet.exceptions import HTTPValidationError
+from edunet.validators.http_validators import validate_and_get_http_request_components
 
 
 @st.composite
@@ -103,7 +103,7 @@ def test_validate_http_request_raises(input_request, expected_result):
 def test_validate_http_request_strategy(request_input):
     res = validate_and_get_http_request_components(request_input[0])
 
-    # From our defined strategy, the first argument was the input to calling our method
+    # from edunet.our defined strategy, the first argument was the input to calling our method
     # The second is the expected tuple result to ensure that we not only validated,
     # but we also split it up as expected
     assert res == request_input[1]

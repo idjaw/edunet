@@ -1,9 +1,8 @@
 import asyncio
+import logging
 import os
-import socket
 import threading
 import urllib.request
-import logging
 import uuid
 
 import pytest

@@ -2,10 +2,10 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from core.networking.handlers.simple_http_connection_handler import (
+from edunet.core.networking.handlers.simple_http_connection_handler import (
     SimpleHTTPConnectionHandler,
 )
-from models.http import HTTPRequest, HTTPResponse
+from edunet.models.http import HTTPRequest, HTTPResponse
 
 
 def test_http_connection_handler_initialization_success(mock_application):
@@ -16,7 +16,7 @@ def test_http_connection_handler_initialization_success(mock_application):
 
 
 @patch(
-    "core.networking.handlers.simple_http_connection_handler.HTTPRequest",
+    "edunet.core.networking.handlers.simple_http_connection_handler.HTTPRequest",
     spec=HTTPRequest,
 )
 def test_handle_connection_dispatches_request_and_sends_back_successfully(
@@ -64,7 +64,7 @@ def test_handle_connection_dispatches_request_and_sends_back_successfully(
 
 
 @patch(
-    "core.networking.handlers.simple_http_connection_handler.HTTPRequest",
+    "edunet.core.networking.handlers.simple_http_connection_handler.HTTPRequest",
     spec=HTTPRequest,
 )
 def test_when_handle_request_fails_then_raise_the_same_exception(
@@ -104,7 +104,7 @@ def test_when_handle_request_fails_then_raise_the_same_exception(
 
 
 @patch(
-    "core.networking.handlers.simple_http_connection_handler.HTTPRequest",
+    "edunet.core.networking.handlers.simple_http_connection_handler.HTTPRequest",
     spec=HTTPRequest,
 )
 def test_when_http_request_from_bytes_fails_then_raise_the_same_exception(
@@ -131,7 +131,7 @@ def test_when_http_request_from_bytes_fails_then_raise_the_same_exception(
 
 
 @patch(
-    "core.networking.handlers.simple_http_connection_handler.HTTPRequest",
+    "edunet.core.networking.handlers.simple_http_connection_handler.HTTPRequest",
     spec=HTTPRequest,
 )
 def test_when_http_response_to_bytes_fails_then_raise_the_same_exception(

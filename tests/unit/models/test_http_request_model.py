@@ -2,11 +2,11 @@ from unittest import mock
 
 import pytest
 
-from exceptions import HTTPValidationError, HTTPDataModelError
-from models.http import HTTPRequest
+from edunet.exceptions import HTTPValidationError, HTTPDataModelError
+from edunet.models.http import HTTPRequest
 
 
-@mock.patch("models.http.validate_and_get_http_request_components")
+@mock.patch("edunet.models.http.validate_and_get_http_request_components")
 def test_http_request_model_converts_get_call_from_bytes_successfully(
     mock_validate_and_get_http_request_components,
 ):
@@ -37,7 +37,7 @@ def test_http_request_model_converts_get_call_from_bytes_successfully(
     assert request_model.body == b""
 
 
-@mock.patch("models.http.validate_and_get_http_request_components")
+@mock.patch("edunet.models.http.validate_and_get_http_request_components")
 def test_http_request_model_converts_post_call_with_body_from_bytes_successfully(
     mock_validate_and_get_http_request_components,
 ):
@@ -69,7 +69,7 @@ def test_http_request_model_converts_post_call_with_body_from_bytes_successfully
 
 
 @pytest.mark.parametrize("exc", [AttributeError, HTTPValidationError])
-@mock.patch("models.http.validate_and_get_http_request_components")
+@mock.patch("edunet.models.http.validate_and_get_http_request_components")
 def test_http_request_model_raises_on_failure(
     mock_validate_and_get_http_request_components, exc
 ):

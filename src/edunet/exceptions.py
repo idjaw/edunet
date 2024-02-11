@@ -1,7 +1,7 @@
 class EduRouterException(Exception):
     """
     Base EduRouterException will be used for general application exceptions and to be
-    inherited from by all other exceptions
+    inherited from edunet.by all other exceptions
     """
 
     pass

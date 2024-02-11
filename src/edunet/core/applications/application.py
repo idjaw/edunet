@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from models.base_types import Request, Response
+from edunet.models.base_types import Request, Response
 
 
 class Application(ABC):

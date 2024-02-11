@@ -2,7 +2,7 @@ import logging
 import re
 from typing import Tuple, Dict
 
-from exceptions import HTTPValidationError
+from edunet.exceptions import HTTPValidationError
 
 # Compiled regex patterns for request line, headers, and body
 REQUEST_LINE_PATTERN = re.compile(rb"^[A-Z]+ [^\r\n]* HTTP/(1\.[01]|2\.0)$")

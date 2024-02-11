@@ -1,9 +1,7 @@
-from unittest import mock
-
 import pytest
 
-from exceptions import HTTPValidationError, HTTPDataModelError
-from models.http import HTTPRequest, HTTPResponse
+from edunet.exceptions import HTTPDataModelError
+from edunet.models.http import HTTPResponse
 
 
 def test_http_response_model_converts_get_call_from_bytes_successfully():

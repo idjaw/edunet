@@ -1,6 +1,6 @@
 import pytest
 
-from core.networking.handlers.connection_handler import ConnectionHandler
+from edunet.core.networking.handlers.connection_handler import ConnectionHandler
 
 
 def test_instantiating_an_implemented_connection_handler_is_successful():

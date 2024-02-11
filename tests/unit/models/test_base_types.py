@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from models.base_types import Request, Response
+from edunet.models.base_types import Request, Response
 
 
 def test_implement_dataclass_from_request_base_type():

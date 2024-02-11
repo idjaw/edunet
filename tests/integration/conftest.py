@@ -1,15 +1,14 @@
 import logging
 import threading
-import time
 
 import pytest
 
-from core.applications.simple_http_application import SimpleHTTPApplication
-from core.networking.handlers.simple_http_connection_handler import (
+from edunet.core.applications.simple_http_application import SimpleHTTPApplication
+from edunet.core.networking.handlers.simple_http_connection_handler import (
     SimpleHTTPConnectionHandler,
 )
-from core.networking.listeners.tcp_listener import TCPListener
-from core.nodes.simple_http_node import SimpleHTTPNode
+from edunet.core.networking.listeners.tcp_listener import TCPListener
+from edunet.core.nodes.simple_http_node import SimpleHTTPNode
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)

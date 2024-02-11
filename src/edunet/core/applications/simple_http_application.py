@@ -1,7 +1,7 @@
 import logging
 
-from core.applications.application import Application
-from models.http import HTTPRequest, HTTPResponse
+from edunet.core.applications.application import Application
+from edunet.models.http import HTTPRequest, HTTPResponse
 
 logger = logging.getLogger(__name__)
 

@@ -2,10 +2,10 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from models.http import HTTPRequest, HTTPResponse
+from edunet.models.http import HTTPRequest, HTTPResponse
 
 
-@patch("core.applications.simple_http_application.HTTPResponse")
+@patch("edunet.core.applications.simple_http_application.HTTPResponse")
 def test_handle_request_successfully_responds_back_with_valid_data(
     mock_http_response_model, simple_http_application, mock_http_request_model, caplog
 ):
@@ -37,7 +37,7 @@ def test_handle_request_successfully_responds_back_with_valid_data(
     assert f"Request data: {mock_request_obj}" in caplog.text
 
 
-@patch("core.applications.simple_http_application.HTTPResponse")
+@patch("edunet.core.applications.simple_http_application.HTTPResponse")
 @pytest.mark.parametrize(
     "exception_type", [SyntaxError, TypeError, ValueError, AttributeError]
 )
@@ -75,7 +75,7 @@ def test_handle_request_returns_500_when_http_response_fails_to_craft_response(
     assert f"Unexpected server error" not in caplog.text
 
 
-@patch("core.applications.simple_http_application.HTTPResponse")
+@patch("edunet.core.applications.simple_http_application.HTTPResponse")
 def test_handle_request_returns_500_logs_error_when_any_other_exception_occurs(
     mock_http_response_model, simple_http_application, mock_http_request_model, caplog
 ):
