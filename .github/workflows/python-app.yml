@@ -71,7 +71,6 @@ jobs:
           poetry build
 
       - name: Archive distributable package
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.9'  # Ensure it's only uploaded once
         uses: actions/upload-artifact@v4
         with:
           name: distributable-package
