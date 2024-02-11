@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "edunet"
-version = "0.1.1"
+version = "0.2.0"
 description = "Simple Network Simulation For The Funs!"
 authors = ["Wajdi Al-Hawari <w.hawari@gmail.com>"]
 readme = "README.md"

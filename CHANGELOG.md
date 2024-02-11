@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 0.1.1
+## 0.2.0
 
 * Will now better handle building and deploying in the CI  [#7](https://github.com/idjaw/edunet/issues/7)
 * Fixed issue with how packaging were not referenced properly after building [#7](https://github.com/idjaw/edunet/issues/7)
