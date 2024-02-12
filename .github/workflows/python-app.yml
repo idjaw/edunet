@@ -1,4 +1,4 @@
-name: Python application
+name: EduNet
 
 on:
   push:
@@ -49,6 +49,13 @@ jobs:
           SKIP_LOAD_TEST: "true"
         run: |
           poetry run tox -e py${{ env.py_version }}
+
+      - name: Upload coverage reports to Codecov
+        if: github.ref == 'refs/heads/main'  # Only run this step if it's the main branch
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: idjaw/edunet
 
   build:
     runs-on: ubuntu-latest

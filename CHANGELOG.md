@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Adds Codecov badge and uploading to Codecov [#20](https://github.com/idjaw/edunet/issues/20)
+
 ## 0.2.1
 
 * Supports tox running multiple Python versions: 3.9, 3.10, 3.11, 3.12 [#15](https://github.com/idjaw/edunet/issues/15)
