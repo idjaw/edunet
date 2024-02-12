@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "edunet"
-version = "0.2.0"
+version = "0.2.1"
 description = "Simple Network Simulation For The Funs!"
 authors = ["Wajdi Al-Hawari <w.hawari@gmail.com>"]
 readme = "README.md"
@@ -20,6 +20,7 @@ flake8 = "^7.0.0"
 pylint = "^3.0.3"
 tox = "^4.12.1"
 hypothesis = "^6.92.9"
+setuptools = "^69.1.0"
 
 [build-system]
 requires = ["poetry-core"]

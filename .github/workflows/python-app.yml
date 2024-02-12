@@ -11,10 +11,12 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
+    env:
+      ACTIONS_STEP_DEBUG: true
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.11"]
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
     permissions:
       contents: write
     steps:
@@ -35,10 +37,18 @@ jobs:
         run: |
           poetry install
 
+
+      - name: Get Python version for tox
+        run: |
+          stripped_py_version=$(echo "${{ matrix.python-version }}" | tr -d '.')
+          echo "py_version=$stripped_py_version" >> $GITHUB_ENV
+        id: py_version
+
       - name: Run tests
         env:
           SKIP_LOAD_TEST: "true"
-        run: poetry run tox
+        run: |
+          poetry run tox -e py${{ env.py_version }}
 
   build:
     runs-on: ubuntu-latest

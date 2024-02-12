@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 0.2.1
+
+* Supports tox running multiple Python versions: 3.9, 3.10, 3.11, 3.12 [#15](https://github.com/idjaw/edunet/issues/15)
+* CI will now run against 3.9, 3.10, 3.11, 3.12 versions of Python [#15](https://github.com/idjaw/edunet/issues/15)
+* REMOVED - Windows in the CI For now. Will address in [#16](https://github.com/idjaw/edunet/issues/16)  [#15](https://github.com/idjaw/edunet/issues/15)
+
 ## 0.2.0
 
 * Will now better handle building and deploying in the CI  [#7](https://github.com/idjaw/edunet/issues/7)
