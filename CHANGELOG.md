@@ -2,7 +2,12 @@
 
 ## Unreleased
 
+## 0.2.2
+
 * Adds Codecov badge and uploading to Codecov [#20](https://github.com/idjaw/edunet/issues/20)
+* Adds PyPi badge for latest version [#20](https://github.com/idjaw/edunet/issues/20)
+* Adds PyPi badge for supported Python versions [#20](https://github.com/idjaw/edunet/issues/20)
+* Adds CI test results badge against main branch [#20](https://github.com/idjaw/edunet/issues/20)
 
 ## 0.2.1
 
