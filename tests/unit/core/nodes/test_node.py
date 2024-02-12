@@ -24,9 +24,20 @@ def test_node_raises_when_methods_not_implemented():
     class MyNode(Node):
         pass
 
-    with pytest.raises(
-        TypeError,
-        match="Can't instantiate abstract class MyNode "
-        "with abstract methods start, stop",
-    ):
+    """
+    Please note: Python 3.12 seems to have changed the assertion message being raised so
+    previous versions are using one set of wording, and Python 3.12 another.
+    
+    Tests will match on a substring instead
+    
+    E       AssertionError: Regex pattern did not match.
+    E        Regex: "Can't instantiate abstract class MyNode with abstract methods 
+                    start, stop"
+    E        Input: "Can't instantiate abstract class MyNode without an implementation 
+                    for abstract methods 'start', 'stop'"
+    """
+
+    with pytest.raises(TypeError) as exc:
         MyNode(Mock(spec=Listener)).start("foo")  # type: ignore
+
+    assert all(s in str(exc.value) for s in ["start", "stop"])

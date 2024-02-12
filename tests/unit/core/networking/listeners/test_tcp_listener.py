@@ -70,7 +70,7 @@ def test_tcp_listener_stop_success(mock_connection_handler, mock_socket, caplog)
     tcp_listener.stop()
 
     assert tcp_listener.is_listening is False
-    assert mock_socket_instance.close.called_once
+    assert mock_socket_instance.close.call_count == 1
     assert "Stopping service" in caplog.text
     assert "All threads terminated. Service has been stopped." in caplog.text
 
