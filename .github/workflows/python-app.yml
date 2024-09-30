@@ -59,7 +59,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/version-bumping'
     strategy:
       matrix:
         os: [ubuntu-latest]

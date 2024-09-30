@@ -11,6 +11,8 @@ on:
           - patch
           - minor
           - major
+  branches:
+    - version-bumping
 
 jobs:
   TestBuildUploadArtifact:
