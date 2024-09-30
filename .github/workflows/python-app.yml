@@ -136,11 +136,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install poetry
 
-      - name: Version bump on release branch
-        uses: bulv1ne/poetry-bumpversion/.github/workflows/version-bump.yml@main
-        with:
-          versionPart: ${{ inputs.versionPart }}
-
       - name: Get version
         run: |
           echo "version=$(poetry version -s)" >> $GITHUB_ENV
