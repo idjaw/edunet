@@ -1,8 +1,5 @@
 name: deploy
 on:
-  push:
-    branches:
-      - '*'
   workflow_dispatch:
     inputs:
       versionPart:
@@ -14,7 +11,6 @@ on:
           - patch
           - minor
           - major
-
 
 jobs:
   TestBuildUploadArtifact:
