@@ -17,12 +17,9 @@ on:
 
 
 jobs:
-  prepare:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Test, Build and upload artifact
-      uses: idjaw/edunet/.github/workflows/python-app@main
+  TestBuildUploadArtifact:
+    uses: idjaw/edunet/.github/workflows/python-app@main
+    secrets: inherit
 
   deploy:
     runs-on: ubuntu-latest
