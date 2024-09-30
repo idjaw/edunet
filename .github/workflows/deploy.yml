@@ -17,7 +17,7 @@ on:
 
 jobs:
   test-and-build:
-    uses: ./.github/workflows/python-app.yml
+    uses: .github/workflows/python-app.yml
   deploy:
     runs-on: ubuntu-latest
     strategy:
