@@ -18,7 +18,7 @@ on:
 
 jobs:
   TestBuildUploadArtifact:
-    uses: idjaw/edunet/.github/workflows/python-app@main
+    uses: idjaw/edunet/.github/workflows/python-app.yml@main
     secrets: inherit
 
   deploy:
