@@ -15,6 +15,7 @@ on:
           - minor
           - major
 
+
 jobs:
   prepare:
     - name: Checkout code
@@ -23,7 +24,6 @@ jobs:
     - name: Test, Build and upload artifact
       uses: idjaw/edunet/.github/workflows/python-app@main
 
-jobs:
   deploy:
     runs-on: ubuntu-latest
     strategy:
