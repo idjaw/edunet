@@ -16,8 +16,6 @@ on:
           - major
 
 jobs:
-  test-and-build:
-    uses: .github/workflows/python-app.yml
   deploy:
     runs-on: ubuntu-latest
     strategy:
@@ -27,6 +25,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+  test-and-build:
+    uses: .github/workflows/python-app.yml
 
       - name: Download distributable package
         uses: actions/download-artifact@v4
