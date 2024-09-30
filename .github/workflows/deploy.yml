@@ -26,8 +26,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-  test-and-build:
-    uses: .github/workflows/python-app.yml
+      - name: Test, Build and upload artifact
+        uses: .github/workflows/python-app.ytml
 
       - name: Download distributable package
         uses: actions/download-artifact@v4
