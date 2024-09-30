@@ -17,7 +17,7 @@ on:
 
 jobs:
   TestBuildUploadArtifact:
-    uses: idjaw/edunet/.github/workflows/python-app.yml@main
+    uses: idjaw/edunet/.github/workflows/python-app.yml@version-bumping
     secrets: inherit
 
   deploy:
