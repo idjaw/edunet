@@ -1,6 +1,7 @@
 name: EduNet
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - '*'
