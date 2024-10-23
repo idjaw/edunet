@@ -17,7 +17,7 @@ jobs:
   test:
     uses: idjaw/edunet/.github/workflows/test.yml@main
 
-  build:
+  release:
     needs: [test]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -55,36 +55,6 @@ jobs:
       - name: Package application
         run: |
           poetry build
-
-      - name: Archive distributable package
-        uses: actions/upload-artifact@v4
-        with:
-          name: distributable-package
-          path: dist/
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download distributable package
-        uses: actions/download-artifact@v4
-        with:
-          name: distributable-package
-          path: dist
-
-      - name: Install Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install poetry
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install poetry
 
       - name: Get version
         run: |
