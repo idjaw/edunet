@@ -8,7 +8,7 @@ jobs:
   test:
     uses: idjaw/edunet/.github/workflows/test.yml@main
   build:
-    needs: [tests]
+    needs: [test]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     strategy:
