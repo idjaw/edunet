@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      sem_version:
+        description: 'Semver bump type: major/minor/patch'
+        required: true
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
+  workflow_call:
+
+jobs:
+  test:
+    uses: idjaw/edunet/.github/workflows/test.yml@main
+
+  release:
+    needs: [test]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install poetry
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
+
+      - name: Install project dependencies
+        run: |
+          poetry install
+
+      - name: Bump Version
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          poetry version ${{ github.event.inputs.sem_version }}
+          git add pyproject.toml
+          git commit -m "Bumps version to $(poetry version -s)" || echo "No changes to commit"
+          git push origin main
+
+      - name: Package application
+        run: |
+          poetry build
+
+      - name: Get version
+        run: |
+          echo "version=$(poetry version -s)" >> $GITHUB_ENV
+        id: version
+
+      - name: Create and push tag
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git tag -a ${{ env.version }} -m "release for ${{ env.version }}"
+          git push origin ${{ env.version }}
+
+      - name: Publish the package with poetry
+        env:
+          API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          poetry config pypi-token.pypi "$API_TOKEN"
+          poetry publish
