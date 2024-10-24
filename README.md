@@ -1,7 +1,7 @@
 [![codecov](https://codecov.io/gh/idjaw/edunet/graph/badge.svg?token=5MZIOFVHA9)](https://codecov.io/gh/idjaw/edunet)
 ![PyPI - Version](https://img.shields.io/pypi/v/edunet)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/edunet)
-[![EduNet](https://github.com/idjaw/edunet/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/idjaw/edunet/actions/workflows/python-app.yml)
+[![EduNet](https://github.com/idjaw/edunet/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/idjaw/edunet/actions/workflows/test.yml)
 
 # EduNet
 This application allows you to simulate different network operations in a simple plug-in manner.

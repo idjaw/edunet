@@ -1,4 +1,4 @@
-name: Deploy
+name: Release
 
 on:
   workflow_dispatch:
@@ -14,25 +14,20 @@ on:
   workflow_call:
 
 jobs:
-  build:
-    uses: idjaw/edunet/.github/workflows/build.yml@main
-  deploy:
-    needs: [build]
+  test:
+    uses: idjaw/edunet/.github/workflows/test.yml@main
+
+  release:
+    needs: [test]
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     strategy:
       matrix:
         os: [ubuntu-latest]
         python-version: ["3.11"]
-    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Download distributable package
-        uses: actions/download-artifact@v4
-        with:
-          name: distributable-package
-          path: dist
 
       - name: Install Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
@@ -44,14 +39,22 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install poetry
 
+      - name: Install project dependencies
+        run: |
+          poetry install
+
       - name: Bump Version
         run: |
           git config user.name "GitHub Actions"
           git config user.email "github-actions@users.noreply.github.com"
           poetry version ${{ github.event.inputs.sem_version }}
           git add pyproject.toml
-          git commit -m "Bumps version"
+          git commit -m "Bumps version to $(poetry version -s)" || echo "No changes to commit"
           git push origin main
+
+      - name: Package application
+        run: |
+          poetry build
 
       - name: Get version
         run: |
